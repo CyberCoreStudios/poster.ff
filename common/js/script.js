@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 type: "social",
                 name: "Facebook",
                 icon: "common/image/facebook.png",
-                url: "https://facebook.com/yourpage"
+                url: "https://www.facebook.com/blazehuntervn/"
             },
             {
                 type: "social",
@@ -232,4 +232,5 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 });
+
 
