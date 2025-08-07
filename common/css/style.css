@@ -1,6 +1,5 @@
 body {
-    /* Yêu cầu 2: Thay đổi font chữ */
-    font-family: 'Zen Dots', sans-serif;
+    font-family: 'Bebas Neue', sans-serif;
     background: #EAEFEF;
     padding: 20px;
     margin: 0;
@@ -321,7 +320,7 @@ h2 {
 }
 
 .copyright {
-    font-size: 0.9em;
+    font-size: 1.0em;
     color: #646464;
     margin-top: 20px;
 }
