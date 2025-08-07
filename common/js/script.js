@@ -147,7 +147,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const copyright = document.createElement('div');
             copyright.className = 'copyright';
-            copyright.textContent = '© 2025 Poster Free Fire. All Rights Reserved Blaze Hunter';
+            copyright.textContent = '© 2025 Poster Free Fire. All Rights Reserved Blaze Hunter.';
             homeWrapper.appendChild(copyright);
 
             contentDiv.appendChild(homeWrapper);
@@ -232,3 +232,4 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 });
+
