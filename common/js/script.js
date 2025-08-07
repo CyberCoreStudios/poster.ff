@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 type: "social",
                 name: "YouTube",
                 icon: "common/image/youtube.png",
-                url: "https://youtube.com/yourchannel"
+                url: "https://www.youtube.com/@blazehuntervn"
             },
             {
                 type: "social",
@@ -230,4 +230,5 @@ document.addEventListener('DOMContentLoaded', () => {
         defaultButton.classList.add('active');
         loadContent('Home Page');
     }
+
 });
