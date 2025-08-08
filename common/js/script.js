@@ -85,11 +85,11 @@ document.addEventListener('DOMContentLoaded', () => {
             { "type": "event", "image": "", "description": "", "startDate": "" },
         ],
         "VN": [
+            { "type": "event", "image": "https://dl.dir.freefiremobile.com/common/Local/VN/Splash_Upload/250809_OB47VN_FW1_Skydive_Itachi.png", "description": "FW1_Skydive_Itachi", "startDate": "09/08/2025" },
+            { "type": "event", "image": "https://dl.dir.freefiremobile.com/common/Local/VN/Splash_Upload/250808_OB47VN_TW1_Pain_Tendo.png", "description": "TW1_Pain_Tendo", "startDate": "08/08/2025" },
+            { "type": "event", "image": "https://dl.dir.freefiremobile.com/common/Local/VN/Splash_Upload/250806_OB47VN_TW2_MP40_Uchiha.png", "description": "TW2_MP40_Uchiha", "startDate": "06/08/2025" },
             { "type": "event", "image": "https://dl.dir.freefiremobile.com/common/Local/VN/Splash_Upload/250803_OB47VN_FW3_Scattering_Crows.png", "description": "FW3_Scattering_Crows", "startDate": "03/08/2025" },
             { "type": "event", "image": "https://dl.dir.freefiremobile.com/common/Local/VN/Splash_Upload/250802_OB47VN_MS_Minato.png", "description": "MS_Minato", "startDate": "02/08/2025" },
-            { "type": "event", "image": "", "description": "", "startDate": "" },
-            { "type": "event", "image": "", "description": "", "startDate": "" },
-            { "type": "event", "image": "", "description": "", "startDate": "" },
             { "type": "event", "image": "", "description": "", "startDate": "" },
         ],
         "EU": [
@@ -238,3 +238,4 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
