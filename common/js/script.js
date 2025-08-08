@@ -231,6 +231,10 @@ document.addEventListener('DOMContentLoaded', () => {
         loadContent('Home Page');
     }
 
+    document.querySelectorAll('.grid-item').forEach(item => {
+        item.addEventListener('click', function() {
+            document.getElementById('imageModal').style.display = 'flex';
+            // ...code hiển thị ảnh...
+        });
+    });
 });
-
-
