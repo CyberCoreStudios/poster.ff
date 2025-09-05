@@ -1,9 +1,24 @@
 document.addEventListener('DOMContentLoaded', () => {
     const eventsData = {
         "Home Page": [
-            { type: "social", name: "Facebook", icon: "common/image/facebook.png", url: "https://www.facebook.com/blazehuntervn/" },
-            { type: "social", name: "YouTube", icon: "common/image/youtube.png", url: "https://www.youtube.com/@blazehuntervn" },
-            { type: "social", name: "TikTok", icon: "common/image/tiktok.png", url: "https://www.youtube.com/@blazehuntervn26" },
+             {
+                type: "social",
+                name: "Facebook",
+                icon: "common/image/facebook.png",
+                url: "https://www.facebook.com/blazehuntervn/"
+            },
+            {
+                type: "social",
+                name: "YouTube",
+                icon: "common/image/youtube.png",
+                url: "https://www.youtube.com/@blazehuntervn"
+            },
+            {
+                type: "social",
+                name: "TikTok",
+                icon: "common/image/tiktok.png",
+                url: "https://www.youtube.com/@blazehuntervn26"
+            }
         ],
         "ID": [
             { "type": "event", "image": "", "description": "", "startDate": "" },
@@ -186,3 +201,4 @@ document.addEventListener('DOMContentLoaded', () => {
         loadContent(initialRegion);
     }
 });
+
