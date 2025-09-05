@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 type: "social",
                 name: "TikTok",
                 icon: "common/image/tiktok.png",
-                url: "https://www.youtube.com/@blazehuntervn26"
+                url: "https://tiktok.com/@yourprofile"
             }
         ],
         "ID": [
@@ -97,6 +97,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const imageModal = document.getElementById('imageModal');
     const modalImg = document.getElementById('img01');
     const closeImageButton = document.getElementsByClassName('close-image')[0];
+    const textModal = document.getElementById('textModal');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalDate = document.getElementById('modalDate');
+    const closeTextButton = document.getElementsByClassName('close-text')[0];
 
     const loadContent = (region) => {
         contentDiv.innerHTML = '';
@@ -134,32 +138,51 @@ document.addEventListener('DOMContentLoaded', () => {
                 const itemDiv = document.createElement('div');
                 itemDiv.classList.add('event-item');
                 contentDiv.appendChild(itemDiv);
-                const img = new Image();
-                img.onload = () => {
-                    itemDiv.innerHTML = '';
-                    itemDiv.appendChild(img);
-                    img.addEventListener('click', () => {
-                        imageModal.style.display = 'block';
-                        modalImg.src = item.image;
-                    });
-                };
-                img.onerror = () => {
-                    itemDiv.innerHTML = '';
+                
+                if (item.image) {
+                    itemDiv.innerHTML = '<p class="loading-text">Loading...</p>';
+                    const img = new Image();
+                    img.onload = () => {
+                        itemDiv.innerHTML = '';
+                        itemDiv.appendChild(img);
+                        img.addEventListener('click', () => {
+                            imageModal.style.display = 'block';
+                            modalImg.src = item.image;
+                        });
+                    };
+                    img.onerror = () => {
+                        itemDiv.innerHTML = '';
+                        const titleElement = document.createElement('p');
+                        titleElement.classList.add('event-title-card');
+                        titleElement.textContent = item.description || 'Poster Will Be Updated Later';
+                        itemDiv.appendChild(titleElement);
+                    };
+                    img.src = item.image;
+                } else {
+                    itemDiv.classList.add('event-item-no-image');
                     const titleElement = document.createElement('p');
                     titleElement.classList.add('event-title-card');
-                    titleElement.textContent = item.description || 'Poster Will Be Updated Later';
+                    titleElement.textContent = item.description || 'Updating';
                     itemDiv.appendChild(titleElement);
-                };
-                img.src = item.image;
+                    itemDiv.addEventListener('click', () => {
+                        modalTitle.textContent = item.description || 'Updating';
+                        modalDate.textContent = `Start Date: ${item.startDate || 'Updating...'}`;
+                        textModal.style.display = 'block';
+                    });
+                }
             });
         }
     };
 
     closeImageButton.onclick = () => { imageModal.style.display = 'none'; };
+    closeTextButton.onclick = () => { textModal.style.display = 'none'; };
 
     window.onclick = (event) => {
         if (event.target == imageModal) {
             imageModal.style.display = 'none';
+        }
+        if (event.target == textModal) {
+            textModal.style.display = 'none';
         }
     };
 
@@ -186,19 +209,26 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+    
+    // Logic mới để xử lý URL khi trang tải lại trên GitHub Pages
+    const urlParams = new URLSearchParams(window.location.search);
+    const initialPath = urlParams.get('path') || window.location.pathname;
 
-    const initialPath = window.location.pathname.replace(/\//g, '').toUpperCase();
     let initialRegion = 'Home Page';
-    if (initialPath) {
-        const foundRegion = Object.keys(eventsData).find(key => key === initialPath);
-        if (foundRegion) {
-            initialRegion = foundRegion;
+    if (initialPath && initialPath !== '/') {
+        const pathSegments = initialPath.split('/').filter(Boolean);
+        if (pathSegments.length > 0) {
+            const regionCode = pathSegments[0].toUpperCase();
+            const foundRegion = Object.keys(eventsData).find(key => key === regionCode);
+            if (foundRegion) {
+                initialRegion = foundRegion;
+            }
         }
     }
+
     const initialButton = document.querySelector(`.nav-button[data-region="${initialRegion}"]`);
     if (initialButton) {
         initialButton.classList.add('active');
         loadContent(initialRegion);
     }
 });
-
