@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Đang chuyển hướng...</title>
+    <script>
+        // Lấy đường dẫn hiện tại mà người dùng đang cố gắng truy cập.
+        var path = window.location.pathname;
+
+        // Chuyển hướng trình duyệt về trang chủ, nhưng thêm đường dẫn ban đầu vào như một tham số.
+        window.location.replace('/?path=' + path);
+    </script>
+</head>
+<body>
+    <p>Nếu bạn không được tự động chuyển hướng, vui lòng nhấn vào <a href="/">đây</a>.</p>
+</body>
+</html>
