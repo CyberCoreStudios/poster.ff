@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 type: "social",
                 name: "TikTok",
                 icon: "common/image/tiktok.png",
-                url: "https://www.youtube.com/@blazehuntervn26"
+                url: "https://www.tiktok.com/@blazehuntervn26"
             }
         ],
         "ID": [
@@ -232,4 +232,5 @@ document.addEventListener('DOMContentLoaded', () => {
         loadContent(initialRegion);
     }
 });
+
 
